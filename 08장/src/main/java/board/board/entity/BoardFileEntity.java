@@ -13,7 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="t_jpa_file")
+@Table(name="t_file")
 @NoArgsConstructor
 @Data
 public class BoardFileEntity {

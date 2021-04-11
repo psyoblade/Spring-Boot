@@ -20,7 +20,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="t_jpa_board")
+@Table(name="t_board")
 @NoArgsConstructor
 @Data
 public class BoardEntity {
@@ -34,12 +34,15 @@ public class BoardEntity {
 	@Column(nullable=false)
 	private String contents;
 	
-	@Column(nullable=false)
+	@Column(nullable=false, columnDefinition = "smallint NOT NULL DEFAULT '0' COMMENT '조회수'")
 	private int hitCnt = 0;
 	
 	@Column(nullable=false)
 	private String creatorId;
-	
+
+	@Column(nullable=false, columnDefinition = "char(1) NOT NULL DEFAULT 'N'")
+	private char deleted_yn;
+
 	@Column(nullable=false)
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private LocalDateTime createdDatetime = LocalDateTime.now();

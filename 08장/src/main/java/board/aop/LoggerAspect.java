@@ -16,13 +16,13 @@ public class LoggerAspect {
 		String type = "";
 		String name = joinPoint.getSignature().getDeclaringTypeName();
 		if (name.indexOf("Controller") > -1) {
-			type = "Controller  \t:  ";
+			type = "컨트롤러  \t:  ";
 		}
 		else if (name.indexOf("Service") > -1) {
-			type = "ServiceImpl  \t:  ";
+			type = "서비스  \t:  ";
 		}
 		else if (name.indexOf("Mapper") > -1) {
-			type = "Mapper  \t\t:  ";
+			type = "맵퍼  \t\t:  ";
 		}
 		log.debug(type + name + "." + joinPoint.getSignature().getName() + "()");
 		return joinPoint.proceed();

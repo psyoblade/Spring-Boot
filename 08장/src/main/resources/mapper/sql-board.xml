@@ -123,7 +123,6 @@
 				t_file
 			WHERE
 				board_idx = #{boardIdx}
-				AND deleted_yn = 'N'
 		]]>
 	</select>
 	
@@ -138,7 +137,6 @@
 			WHERE
 				idx = #{idx}
 				AND board_idx = #{boardIdx}
-				AND deleted_yn = 'N'
 		]]>
 	</select>
 </mapper>

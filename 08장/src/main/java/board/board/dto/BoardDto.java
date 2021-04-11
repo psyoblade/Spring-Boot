@@ -16,7 +16,9 @@ public class BoardDto {
 	private int hitCnt;
 	
 	private String creatorId;
-	
+
+	private char deleted_yn;
+
 	private String createdDatetime;
 	
 	private String updaterId;

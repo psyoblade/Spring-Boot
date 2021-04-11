@@ -2,6 +2,7 @@ package board.board.service;
 
 import java.util.List;
 
+import board.board.entity.Bar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -20,6 +21,9 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
 	private FileUtils fileUtils;
+
+	@Autowired
+	private Bar bar;
 	
 	@Override
 	public List<BoardDto> selectBoardList() throws Exception {
@@ -33,6 +37,7 @@ public class BoardServiceImpl implements BoardService{
 		if(CollectionUtils.isEmpty(list) == false){
 			boardMapper.insertBoardFileList(list);
 		}
+		System.out.println(bar);
 	}
 
 	@Override
